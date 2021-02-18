@@ -1,0 +1,30 @@
+
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="ProposalCode">Código Proposta</label>
+      <input type="text" class="form-control" id="ProposalCode" aria-describedby="Código Proposta" placeholder="Digite a proposta"  [(ngModel)]="ProposalCode" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+      <label for="ProductCode">Código Produto</label>
+      <input type="text" class="form-control" id="ProductCode" placeholder="Digite o Produto" [(ngModel)]="ProductCode" [ngModelOptions]="{standalone: true}">
+    </div>
+
+    <div class="form-group">
+      <label for="CustomerDocument">CPF</label>
+      <input type="text" class="form-control" id="CustomerDocument" placeholder="Digite o CPF" [(ngModel)]="CustomerDocument" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-check">
+      <input type="file" class="form-check-input" id="FileUpload"  #fileInput (change)="selectFile($event)">
+      <label class="form-check-label" for="FileUpload">Arquivo</label>
+    </div>
+    
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()" style="margin-top: 50px; margin-bottom: 50px;">Submit</button>
+  </form>
+
+
+  <div class="alert alert-primary" role="alert" *ngIf="message !=''">
+    This is a primary alert—check it out!
+  </div>
+
+</div>
